@@ -16,7 +16,7 @@ public class AttackedCard : MonoBehaviour, IDropHandler
         CardController defenceCard = GetComponent<CardController>();
 
         // ƒoƒgƒ‹‚·‚é
-        //GameManager.CardBattle(attackCard, defenceCard);
+        GameManager.instance.CardBattle(attackCard, defenceCard);
 
     }
 }

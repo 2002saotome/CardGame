@@ -9,6 +9,7 @@ public class CardModel
     public string name;
     public int power;
     public Sprite icon;
+    public bool canAttack = false;
 
     public CardModel(int cardID)
     {

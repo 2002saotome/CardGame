@@ -24,7 +24,7 @@ public class CountTimer : MonoBehaviour
         }
 
         //クリックした瞬間
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             //時間をカウントする
             CountDown -= Time.deltaTime;

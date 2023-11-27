@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CardMovement : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
@@ -24,4 +25,6 @@ public class CardMovement : MonoBehaviour, IDragHandler, IBeginDragHandler, IEnd
         transform.SetParent(cardParent, false);
         GetComponent<CanvasGroup>().blocksRaycasts = true; // blocksRaycasts‚ðƒIƒ“‚É‚·‚é
     }
+
+
 }
