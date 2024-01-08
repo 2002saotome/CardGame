@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text playerLeaderHPText;
     [SerializeField] Text enemyLeaderHPText;
 
-    bool isPlayerTurn = true; //
-    List<int> deck = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8 };  //
+    bool isPlayerTurn = true; 
+    List<int> deck = new List<int>() { 1, 2, 3, 4, 5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30};  //計30枚カード引けたり使用が可能
 
     public static GameManager instance;
     public int playerLeaderHP;
@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public int EnemyTurnFlag =0;
 
     private float EffectCountDown = 5.0f;
+    public float EnemyActionTimer = 5.0f;
+    public int EnemyActionTimerFlag = 0;
 
     public Text TurnText;
     public Text EnemyActionText;
@@ -38,12 +40,48 @@ public class GameManager : MonoBehaviour
 
     public void AttackToLeader(CardController attackCard, bool isPlayerCard)
     {
-        if (attackCard.model.canAttack == false)
+        if (attackCard.model.canAttack == true)
         {
             return;
         }
-
+        
+        //爆弾の処理
+        if (attackCard.model.power==0)
+        {
+            int RandBomb = Random.Range(1,5);//1～5のランダムな攻撃(爆弾)
+            //1
+            if(RandBomb==1)
+            {
+                enemyLeaderHP -= 1;
+                playerLeaderHP -= 1;
+            }
+            //2
+            if (RandBomb == 2)
+            {
+                enemyLeaderHP -= 2;
+                playerLeaderHP -= 2;
+            }
+            //3
+            if (RandBomb == 3)
+            {
+                enemyLeaderHP -= 3;
+                playerLeaderHP -= 3;
+            }
+            //4
+            if (RandBomb == 4)
+            {
+                enemyLeaderHP -= 4;
+                playerLeaderHP -= 4;
+            }
+            //5
+            if (RandBomb == 5)
+            {
+                enemyLeaderHP -= 5;
+                playerLeaderHP -= 5;
+            }
+        }
         enemyLeaderHP -= attackCard.model.power;
+        ChangeTurn();
 
         attackCard.model.canAttack = false;
         attackCard.view.SetCanAttackPanel(false);
@@ -99,14 +137,18 @@ public class GameManager : MonoBehaviour
         }
 
         // デッキの一番上のカードを抜き取り、手札に加える
-        int cardID = deck[0];
+        int cardID = Random.Range(1,9); //カードのIDをランダムで取得
         deck.RemoveAt(0);
-        CreateCard(cardID, hand);
+        if(deck.Count>10)
+        {
+            CreateCard(cardID, hand);
+        }
+        
     }
 
-    void SetStartHand() // 手札を3枚配る
+    void SetStartHand() // 手札を5枚配る
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             DrawCard(playerHand);
         }
@@ -170,8 +212,17 @@ public class GameManager : MonoBehaviour
     void EnemyTurn()
     {
         Debug.Log("敵のターン");
+        if(EnemyActionTimerFlag==1)
+        {
+            EnemyActionTimer -= 0.1f;
+        }
 
-        
+        if(EnemyActionTimer<0)
+        {
+            EnemyActionTimerFlag = 0;
+            EnemyActionTimer = 5.0f;
+            ChangeTurn();
+        }
 
         if (EffectCountDown < 0)
         {
@@ -194,31 +245,31 @@ public class GameManager : MonoBehaviour
         {
             enemyLeaderHP += 5; //5回復
             EnemyActionText.text = "スライムは5回復した";
-            ChangeTurn(); // ターンエンドする
+            EnemyActionTimerFlag = 1; // ターンエンドする
         }
         if (EnemyAction == 2)
         {
             playerLeaderHP -= 1; //1攻撃
             EnemyActionText.text = "スライムは1攻撃した";
-            ChangeTurn(); // ターンエンドする
+            EnemyActionTimerFlag = 1; // ターンエンドする
         }
         if (EnemyAction == 3)
         {
             playerLeaderHP -= 2; //2攻撃
             EnemyActionText.text = "スライムは2攻撃した";
-            ChangeTurn(); // ターンエンドする
+            EnemyActionTimerFlag = 1; // ターンエンドする
         }
         if (EnemyAction == 4)
         {
             playerLeaderHP -= 3; //3攻撃
             EnemyActionText.text = "スライムは3攻撃した";
-            ChangeTurn(); // ターンエンドする
+            EnemyActionTimerFlag = 1; // ターンエンドする
         }
         if (EnemyAction == 5)
         {
             playerLeaderHP -= 5; //5攻撃
             EnemyActionText.text = "スライムは5攻撃した";
-            ChangeTurn(); // ターンエンドする
+            EnemyActionTimerFlag = 1; // ターンエンドする
         }
     }
 

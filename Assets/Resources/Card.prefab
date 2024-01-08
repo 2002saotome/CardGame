@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 4297756572108907146}
   - component: {fileID: 1206096593447024212}
   - component: {fileID: -4674151846680639857}
+  - component: {fileID: 5033032920135977151}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -217,6 +218,18 @@ MonoBehaviour:
   powerText: {fileID: 1090948921787951843}
   iconImage: {fileID: 3978204901434072933}
   canAttackPanel: {fileID: 1627271604308399412}
+--- !u!114 &5033032920135977151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627271604308399412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c148a4499b482744c91fd4d93689f4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5081301851614157219
 GameObject:
   m_ObjectHideFlags: 0

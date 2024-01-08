@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AttackedLeader
     - CardController
     - CardEntity
     - CardMovement
@@ -13,7 +14,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -29,9 +29,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    Unity.Timeline.Editor.dll:
-    - TimelinePreferences
-    - TimelineProjectSettings
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -94,15 +91,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4194}
     - Class: 114
-      Script: {instanceID: 4346}
+      Script: {instanceID: 4348}
     - Class: 114
-      Script: {instanceID: 4890}
+      Script: {instanceID: 4892}
     - Class: 114
-      Script: {instanceID: 5286}
+      Script: {instanceID: 4926}
     - Class: 114
-      Script: {instanceID: 5494}
+      Script: {instanceID: 5290}
     - Class: 114
-      Script: {instanceID: 5770}
+      Script: {instanceID: 5498}
+    - Class: 114
+      Script: {instanceID: 5774}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -151,7 +150,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3362}
     - Class: 114
-      Script: {instanceID: 24388}
+      Script: {instanceID: 4222}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -247,7 +246,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 462fbe47d56fa13d10b70818b9fbeb40
+      Hash: 36fcecda14e7bc786e17f94c938aa4e4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CardView
@@ -523,10 +522,16 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: c384bf2f39b1e8e4d612d78b1c767515
+      Hash: 8ae7abd22ce8db2aee4650c6825bf3a3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneChangeTitle
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -644,6 +649,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AttackedLeader
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinEntity
@@ -719,14 +730,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SceneChangeTitle
   platform: 19
   scenePathNames:
   - Assets/Scenes/GamePlay/GamePlay.unity
   - Assets/Scenes/Title/Title.unity
-  playerPath: "C:/Users/k021g1125/Desktop/\u5B9F\u884C\u7528(10\u670830)/CardGame.exe"
+  playerPath: "C:/Users/k021g1125/Desktop/\u65B0\u3057\u3044\u30D5\u30A9\u30EB\u30C0\u30FC/CardGame.exe"
